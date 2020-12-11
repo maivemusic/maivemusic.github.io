@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Places</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      cursor: none;
+      overflow: hidden;
+    }
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+    #wrap {
+      width: 100vw;
+      height: 100vh;
+      background: url(Img/BG.jpg) center;
+      /* background: url(Img/x1.png) center rgb(219, 219, 219); */
+      /* background: url(Img/x2.png) center rgb(219, 219, 219); */
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .Places {
+      background-image: url(Img/Places.jpg);
+      background-size: cover;
+      height: 60vh;
+      width: 60vh;
+      box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.7);
+      mix-blend-mode: hard-light;
+    } 
+    #maive {
+      font-size: 22px;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      position: absolute;
+      left: 8.9vh;
+      top: 9.5vh;
+      mix-blend-mode: color-dodge;
+    }
+    #xo {
+      font-size: 22px;
+      color: white;
+      position: absolute;
+      right : 8.9vh;
+      top: 9.5vh;
+      z-index: 1;
+      mix-blend-mode: color-dodge;
+    }
+    #xo:hover {
+      color: #fe3f6c;
+      transform: scale(1.6);
+      transition: all 0.7s ease;
+    }
+    #mxa {
+      font-size: 22px;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      position: absolute;
+      left: 8.9vh;
+      bottom: 10vh;
+    }
+    #social {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column-reverse;
+      height: 100px;
+      width: 25px;
+      position: absolute;
+      right: 8.9vh;
+      bottom: 9.5vh;
+      mix-blend-mode: color-dodge;
+    }
+    #social a {
+      font-size: 25px;
+      text-decoration: none;
+      color: white;
+      cursor: none;
+      z-index: 1;
+    }
+    #social a:hover {
+      transform: scale(1.3);
+      transition: all 0.7s ease;
+    }
+    .cursorA, .cursorB, .cursorC, .cursorD {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 113px;
+      height: 113px;
+      border: 3.1px solid rgb(255, 156, 156);
+      background: pink;
+      mix-blend-mode: saturation;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .cursorB {
+      width: 61.18px;
+      height: 61.18px;
+      border: 2.2px solid white;
+      background: none;
+      mix-blend-mode: exclusion;
+      pointer-events: none;
+      transition: all 0.5s;
+    }
+    .cursorC {
+      width: 31px;
+      height: 31px;
+      border: 2.2px solid white;
+      background: none;
+      mix-blend-mode: difference;
+      transition: all 1.3s;
+    }
+    .cursorD {
+      width: 13px;
+      height: 13px;
+      background: white;
+      border: none;
+      mix-blend-mode: difference;
+      transition: all 2.2s;
+    }
+    @media (max-width: 700px) { 
+    .Places {
+      background-image: url(Img/Places.jpg);
+      background-size: cover;
+      height: 60vw;
+      width: 60vw;
+    }
+    #maive {
+      font-size: 13px;
+      left: 8.9vw;
+      top: 9.5vw;
+    }
+    #xo {
+      font-size: 13px;
+      right: 8.9vw;
+      top: 9.5vw;
+    } 
+    #mxa {
+      font-size: 13px;
+      left: 8.9vw;
+      bottom: 10vw;
+    }
+    #social {
+      right: 8.9vw;
+      bottom: 9.5vw;
+      height: 50px;
+    }
+    #social a {
+      font-size: 13px;
+    }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="x"></div>
+    <div id="maive">Maive Plaza</div>
+    <div id="xo">❤</div>
+    <div id="mxa">MxA</div>
+    <div id="social">
+      <a href="https://www.facebook.com/GazelleMaive"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/maiveplaza/"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/maiveplaza"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="Places"></div>
+  </div>
+
+  <div class="cursorA"></div>
+  <div class="cursorB"></div>
+  <div class="cursorC"></div>
+  <div class="cursorD"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js" integrity="sha512-aqhdrigR8ePLi7IhiGrZz4APv1VktO5eCavRmavrNSk1Ut/s/WVlDwH94SeCqAiM0lm/s8mjtjaDhfevv2Zauw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="JS/Hover.js"></script>
+  <script src="JS/App.js"></script>
+</body>
+</html>
