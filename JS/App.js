@@ -44,6 +44,16 @@ $(document).ready(function(){
       'height' : '113px',
     });
   });
+
+  $('.Places').hover(function(){ // -------------cursorABlur-------------
+    $('.cursorA').css({
+      'backdrop-filter' : 'blur(7px)',
+    });
+    }, function(){
+    $('.cursorA').css({
+      'backdrop-filter' : 'blur(0px)',
+    });
+  });
   // -------------cursorB-------------
   $('.Places, #maive, #xo, #mxa, a').hover(function(){
     $('.cursorB').animate({
@@ -79,5 +89,14 @@ $(document).ready(function(){
       'width' : '13px',
       'height' : '13px',
     });
-  }); 
+  });
+  $('.Places').hover(function(){ // -------------cursorDBlur-------------
+    $('.cursorD').css({
+      'backdrop-filter' : 'blur(3.1px)',
+    });
+    }, function(){
+    $('.cursorD').css({
+      'backdrop-filter' : 'blur(0px)',
+    });
+  });
 });
