@@ -14,9 +14,41 @@
       padding: 0;
       cursor: none;
       overflow: hidden;
+      background: black;
     }
     ::-webkit-scrollbar {
         width: 0;
+    }
+    .loading {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      pointer-events: none;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s all ease-in-out;
+    }
+    .loading p {
+      color: white;
+      font-size: 7vh;
+      font-family: 'Playfair Display', serif;
+    }
+    .loading p span {
+        animation: x 1.3s 1.3s infinite alternate;
+        animation-play-state: running;
+    }
+    @keyframes x {
+        from {
+            color: white;
+        }
+        to {
+            color: #fe3f6c;
+        }
     }
     #wrap {
       width: 100vw;
@@ -28,6 +60,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      opacity: 0;
+      transition: 1.3s opacity ease-in-out;
     }
     .Places {
       background-image: url(Img/Places.jpg);
@@ -164,6 +198,11 @@
   </style>
 </head>
 <body>
+  <div class="loading" id="loadJS">
+    <p>
+      M<span>x</span>A
+    </p>
+  </div>
   <div id="wrap">
     <div id="x"></div>
     <div id="maive">Maive Plaza</div>
