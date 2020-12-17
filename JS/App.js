@@ -1,3 +1,17 @@
+function loadingDiv(){
+  $('.loading p span').css({
+    'animation-play-state' : 'paused',
+  });
+  $('#loadJS').css({
+      'opacity' : '0',
+  });
+  $('#wrap').css({
+    'opacity' : '1',
+  });
+};
+
+$( window ).on( "load", loadingDiv );
+
 // -------------Cursor-------------
 gsap.set('.cursorA',{xPercent:-50,yPercent:-50});
 gsap.set('.cursorB',{xPercent:-50,yPercent:-50});
