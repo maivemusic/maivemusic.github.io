@@ -38,7 +38,7 @@ new hoverEffect({
     parent: document.querySelector('.Places'),
     intensity: 0.9,
     image1:'Img/Places.jpg',
-    image2:'Img/Meb.jpg',
+    image2:'Img/MassiveCover.jpg',
     displacementImage:"Img/dis.png",
     speedIn: 0.7,
     speedOut: 0.7,
@@ -104,13 +104,13 @@ $(document).ready(function(){
       'height' : '13px',
     });
   });
-  $('.Places').hover(function(){ // -------------cursorDBlur-------------
-    $('.cursorD').css({
-      'backdrop-filter' : 'blur(3.1px)',
-    });
-    }, function(){
-    $('.cursorD').css({
-      'backdrop-filter' : 'blur(0px)',
-    });
-  });
+  // $('.Places').hover(function(){ // -------------cursorDBlur-------------
+  //   $('.cursorD').css({
+  //     'backdrop-filter' : 'blur(3.1px)',
+  //   });
+  //   }, function(){
+  //   $('.cursorD').css({
+  //     'backdrop-filter' : 'blur(0px)',
+  //   });
+  // });
 });
